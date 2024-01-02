@@ -1,3 +1,6 @@
+public/
+.envrc
+
 # build output
 dist/
 

@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 import "bootstrap/dist/css/bootstrap.min.css";
 import bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js?url";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../styles/global.css"
+import "../styles/common.css";
 
 interface Props {
   title: string;
@@ -18,7 +18,10 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="渋谷区にある富ヶ谷二丁目町会のホームページ" />
+    <meta
+      name="description"
+      content="渋谷区にある富ヶ谷二丁目町会のホームページ"
+    />
     <meta name="viewport" content="width=device-width" initial-scale="1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css" />
@@ -26,23 +29,19 @@ const { title } = Astro.props;
       rel="stylesheet"
       href="https://fonts.googleapis.com/earlyaccess/notosansjp.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
     <Header />
     <div class="container-xxl">
-      <div class="row">
-        <div class="col-md-2 mt-5">
-          <Sidebar />
-        </div>
-        <div class="col-md-10">
-          <slot />
-        </div>
-      </div>
+      <slot />
     </div>
     <Footer />
     <script src={bootstrap}></script>
